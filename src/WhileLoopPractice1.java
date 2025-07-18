@@ -21,7 +21,7 @@ public class WhileLoopPractice1 {
             }
             System.out.println(sum + "!!!");
         } else {
-            System.out.println("Invalid Choice");
+            System.out.println("Invalid Choice.");
         }
 
 
