@@ -8,7 +8,7 @@ public class LoopsPractice4 {
         System.out.println("Enter a number to get sum of its each digit: ");
         int num = sc.nextInt();
         int ans = 0;
-        while (num> 0){
+        while (num> 0){         // simple logic of this loop "use kiya add kiya udha diya"
             ans = ans + num%10; //this is done to add remainder to ans by taking mod of number
             num  /= 10;         //this is done to remove the last digit
         }
