@@ -32,22 +32,22 @@ public class ChoiceBasedMethodExecution {
             System.out.println("Thanks for choosing addition \n Enter two numbers");
             int a = sc.nextInt();
             int b = sc.nextInt();
-            ans = obj.add(a,b);
+            ans = obj.add(a,b);     //Calling add method through created obj
         } else if (choice==2) {
             System.out.println("Thanks for choosing subtraction \n Enter two numbers");
             int a = sc.nextInt();
             int b = sc.nextInt();
-            ans = obj.sub(a,b);
+            ans = obj.sub(a,b);     //Calling sub method through created obj
         } else if (choice==3) {
             System.out.println("Thanks for choosing Multiplication \n Enter two numbers");
             int a = sc.nextInt();
             int b = sc.nextInt();
-            ans = obj.mul(a,b);
+            ans = obj.mul(a,b);     //Calling mul method through created obj
         } else if (choice==4) {
             System.out.println("Thanks for choosing Division \n Enter two numbers");
             int a = sc.nextInt();
             int b = sc.nextInt();
-            ans = obj.div(a,b);
+            ans = obj.div(a,b);     //Calling div method through created obj
         } else {
             System.out.println("Please enter a valid choice number");
         }
