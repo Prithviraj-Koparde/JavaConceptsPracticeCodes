@@ -54,5 +54,12 @@ public class ChoiceBasedMethodExecution {
 
         System.out.println("Your answer is:"+ ans);
 
+
+        //-----------------------------------------------//
+        // We also learned about some inbuilt java functions like
+        //    1.sqrt    gives you a square root of a number
+        //    2.ceil    gives you a highest number of a decimal number like 5.8, 5.9 will be 6
+        //    3.floor   gives you a smallest number of a decimal number like 5.3, 5.2 will be 5
+        //    These functions gives output in double values in other words in decimal values
     }
 }
