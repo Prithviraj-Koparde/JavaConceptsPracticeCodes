@@ -1,6 +1,6 @@
 import java.util.Scanner;
 class Maths{
-    int add(int a , int b){
+    int add(int a , int b){         //here int a and int b are formal parameters
         int ans = a+b;
         return ans;
     }
@@ -32,7 +32,7 @@ public class ChoiceBasedMethodExecution {
             System.out.println("Thanks for choosing addition \n Enter two numbers");
             int a = sc.nextInt();
             int b = sc.nextInt();
-            ans = obj.add(a,b);     //Calling add method through created obj
+            ans = obj.add(a,b);     //Calling add method through created obj        // here a and b are actual parameters and are pass by value
         } else if (choice==2) {
             System.out.println("Thanks for choosing subtraction \n Enter two numbers");
             int a = sc.nextInt();
