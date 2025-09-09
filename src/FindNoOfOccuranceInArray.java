@@ -1,7 +1,7 @@
 //Find number of occurance of element x in an array and return the total occurance
 // also find last occurance of an element
 // and also find number of elements greater than value x
-
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class FindNoOfOccuranceInArray {
@@ -43,6 +43,22 @@ public class FindNoOfOccuranceInArray {
         System.out.println("Number of greater numbers than"+" "+ x +" "+ "are" + " "+ greaterNum);
     }
 
+    static boolean isSorted(int [] arr){
+        for (int i = 1; i<arr.length; i++){
+            if (arr[i]<arr[i-1]){
+                //not sorted
+                return false;
+            }
+        }
+        return true;
+    }
+
+    static int[] smallAndLargeEle(int [] arr){
+        Arrays.sort(arr);
+        int [] ans = {arr[0] , arr[arr.length-1]};
+        return ans;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter size of array: ");
@@ -67,5 +83,12 @@ public class FindNoOfOccuranceInArray {
         System.out.println("Now lets check how many elements are greater than element z enter its value: ");
         int z = sc.nextInt();
         NofGreatEle(arr, z);
+
+        System.out.println("Is this array sorted?"+" "+ isSorted(arr));
+
+        System.out.println();
+        int [] ans = smallAndLargeEle(arr);
+        System.out.println("Smallest element is"+" "+ans[0]);
+        System.out.println("Largest element is"+" "+ans[1]);
     }
 }
