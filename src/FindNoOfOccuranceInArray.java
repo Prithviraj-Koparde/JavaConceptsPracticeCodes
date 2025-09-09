@@ -59,6 +59,13 @@ public class FindNoOfOccuranceInArray {
         return ans;
     }
 
+
+    static int[] kthSmallAndLargeEle(int [] arr, int k){
+        Arrays.sort(arr);
+        int [] ans = {arr[k -1], arr[arr.length-k]};
+        return ans;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter size of array: ");
@@ -90,5 +97,13 @@ public class FindNoOfOccuranceInArray {
         int [] ans = smallAndLargeEle(arr);
         System.out.println("Smallest element is"+" "+ans[0]);
         System.out.println("Largest element is"+" "+ans[1]);
+
+        System.out.println();
+        System.out.println("Now lets check the kth smallest and kth largest element in array enter value of k: ");
+        int k = sc.nextInt();
+        int [] ans1 = kthSmallAndLargeEle(arr,k);
+        System.out.println(ans1[0]);
+        System.out.println(ans1[1]);
+
     }
 }
