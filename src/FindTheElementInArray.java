@@ -2,6 +2,7 @@
 
 class array{
     void findEle(){
+        // This is a Linear Search Algorithm
         int [] arr = {1,2,3,4,5,6,7,8,9,10,11,11,12,13,14};
         int ans = -1;
         int x = 11;
