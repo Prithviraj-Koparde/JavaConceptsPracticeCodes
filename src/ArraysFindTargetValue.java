@@ -35,7 +35,6 @@ public class ArraysFindTargetValue {
         }
         System.out.println("Your array is: ");
         obj.printArray(arr);
-        System.out.println();
         System.out.println("Now set value for x: ");
         int x = sc.nextInt();
         obj.FindTargetVal(arr, x);
