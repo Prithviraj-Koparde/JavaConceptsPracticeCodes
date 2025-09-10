@@ -10,7 +10,8 @@ class lec16a{
     }
 
     static void Uniquevalue(int [] arr){
-
+                // for ex value of array before replacing duplicate values with -1
+                // [1,2,3,4,3,2,1]
         for (int i = 0; i<arr.length; i++){     // loop to traverse array from first number
             for (int j = i+1; j<arr.length; j++){   // loop to traverse array from next number to first
                 if (arr[i] == arr[j]){
@@ -19,7 +20,8 @@ class lec16a{
                 }
             }
         }
-
+                // values after replacing duplicate values with -1
+                // [-1,-1,-1,4,-1,-1,-1]
         for (int i = 0 ; i<arr.length; i++){    // loop for finding out unique value other than -1
             if (arr[i]>-1){
                 System.out.println("Unique value in array is"+" "+arr[i]);
