@@ -1,27 +1,43 @@
 import java.util.Scanner;
 
-// Revers an array consisting of integers
-class lec17a{
-    static void RevArray(int [] arr){
-        for (int i = arr.length-1 ; i>=0 ; i--){
+// Reverse an array consisting of integers
+class lec17a {
+    static void RevArray(int[] arr) {
+        for (int i = arr.length - 1; i >= 0; i--) {
             System.out.print(arr[i] + " ");
         }
 
     }
 
     // another method
-    static int [] RevArray1(int [] arr){
+    static int[] RevArray1(int[] arr) {
         int j = 0;
-        int [] ans = new int[arr.length];
-        for (int i = arr.length-1; i>=0; i--){
+        int[] ans = new int[arr.length];
+        for (int i = arr.length - 1; i >= 0; i--) {
             ans[j++] = arr[i];
         }
         return ans;
     }
 
-    static void printArray(int [] arr){
-        for (int i = 0; i<arr.length; i++){
+    static void printArray(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
+        }
+    }
+
+    // Another method which says that use in-place(jisme second memory nahi use karni hai swapping use karni hai og array me) approach
+    static void swapArrayEle(int [] arr , int i, int j){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    static void InPlaceReversing(int [] arr){
+        int i = 0; int j = arr.length -1 ;
+        while (i<j){
+            swapArrayEle(arr, i, j);
+            i++;
+            j--;
         }
     }
 }
@@ -47,5 +63,9 @@ public class ArrayReversing {
 
         int [] ans = obj.RevArray1(arr);
         obj.printArray(ans);
+        System.out.println();
+
+        obj.InPlaceReversing(arr);
+        obj.printArray(arr);
     }
 }
