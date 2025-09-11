@@ -24,6 +24,28 @@ class lec17b{
             System.out.print(arr[i] + " ");
         }
     }
+
+    // InPlace Array Reverse
+    static void reverse(int [] arr, int start, int last){
+        while(start < last){
+            swapArrayEle(arr, start, last);
+            start++;
+            last--;
+        }
+    }
+    static void swapArrayEle(int [] arr, int i, int j){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    static void InplaceRotateArr(int [] arr, int k){
+        k = k% arr.length;
+
+        reverse(arr, 0, arr.length-k-1);
+        reverse(arr , arr.length-k, arr.length-1);
+        reverse(arr, 0, arr.length-1);
+    }
 }
 public class ArrayRotatePractice {
     public static void main(String[] args) {
@@ -46,5 +68,12 @@ public class ArrayRotatePractice {
 
         int [] a = obj.RotateArr(arr, k);
         obj.printArray(a);
+
+        System.out.println("Enter value for k to rotate the array k times with inPlace approach");
+        int j = sc.nextInt();
+
+        obj.InplaceRotateArr(arr, j);
+        obj.printArray(arr);
+
     }
 }
