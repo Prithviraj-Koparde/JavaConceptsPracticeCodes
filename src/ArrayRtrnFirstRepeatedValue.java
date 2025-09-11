@@ -16,6 +16,16 @@ class lec16c{
         return ans;
     }
 
+    // Swapping of numbers without using temp value (bye addition and subtraction method)
+    static int SwapWithoutTemp(int a, int b){
+        a = a + b;
+        b = a - b;
+        a = a - b;
+
+        System.out.println(a);
+        return b;
+    }
+
     static void printArray(int [] arr){
         for (int i = 0; i<arr.length; i++){
             System.out.print(arr[i] + " ");
@@ -40,5 +50,12 @@ public class ArrayRtrnFirstRepeatedValue {
 
         System.out.println("First repeated value in this array is" + " " + obj.ReturnRepeatVal(arr));
 
+
+        // Swapping of numbers without using temp value (bye addition and subtraction method)
+        System.out.println("ENTER TWO NUMBERS TO SWAP THEM");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        System.out.println(obj.SwapWithoutTemp(a,b));
     }
 }
