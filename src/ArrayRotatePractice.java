@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-// Rotate the array with k steps note that k should not be a negative number
+// Rotate the array with k steps note that k should not be a negative number and also do it with in-place approach
 class lec17b{
     static int [] RotateArr(int[] arr, int k){
         int n = arr.length;
