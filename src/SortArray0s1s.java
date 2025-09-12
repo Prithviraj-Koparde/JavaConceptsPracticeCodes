@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 //sort array consisting of 0's and 1's
 class lec18{
+    // multiple loops approach
     static void sort(int [] arr){
         int count = 0;
         for (int i = 0; i<arr.length; i++){
@@ -24,6 +25,31 @@ class lec18{
             System.out.print(arr[i] + " ");
         }
     }
+
+    // Single loop approach
+    static void swap(int [] arr, int left, int right){
+        int temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
+    }
+
+    static void sortWithOneLoop(int [] arr){
+        int left = 0;
+        int right = arr.length-1;
+        while(left<right) {
+            if (arr[left] == 1 && arr[right] == 0) {
+                swap(arr, left, right);
+                left++;
+                right--;
+            }
+            if (arr[left] == 0){
+                left++;
+            }
+            if (arr[right] == 1){
+                right--;
+            }
+        }
+    }
 }
 
 public class SortArray0s1s {
@@ -42,8 +68,13 @@ public class SortArray0s1s {
         obj.printArray(arr);
         System.out.println();
 
-        System.out.println("Sorted array is: ");
-        obj.sort(arr);
+//        System.out.println("Sorted array is: ");
+//        obj.sort(arr);
+//        obj.printArray(arr);
+
+        System.out.println();
+        System.out.println("Sort array with single loop");
+        obj.sortWithOneLoop(arr);
         obj.printArray(arr);
     }
 }
