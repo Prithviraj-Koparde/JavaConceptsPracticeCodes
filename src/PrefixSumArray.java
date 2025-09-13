@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-// given an array a return the prefix sum/ running sum in the array
+// given an array a return the prefix sum/ running sum in an array
 class lec19{
     static void printArray(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
@@ -16,6 +16,14 @@ class lec19{
             pref[i] = pref[i-1] + arr[i];
         }
         return pref;
+    }
+
+    // in place (without creating an extra array make change in same array)
+    static int [] InplacePrefixSum(int [] arr){
+        for (int i = 1; i< arr.length; i++){
+            arr[i] = arr[i-1] + arr[i];
+        }
+        return arr;
     }
 }
 
@@ -38,5 +46,9 @@ public class PrefixSumArray {
         System.out.println("The prefix sum of given array is: ");
         int [] ans = obj.PrefixSum(arr);
         obj.printArray(ans);
+        System.out.println();
+
+        int [] pref = obj.InplacePrefixSum(arr);
+        obj.printArray(pref);
     }
 }
