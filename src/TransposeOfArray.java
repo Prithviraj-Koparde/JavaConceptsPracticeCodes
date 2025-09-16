@@ -9,6 +9,7 @@ class lec21{
         }
     }
 
+// No inplace approach
     static int [][] FindTranspose(int [][] arr, int r, int c){
         int [][] ans = new int[c][r];
 
@@ -18,6 +19,17 @@ class lec21{
             }
         }
         return ans;
+    }
+
+    // inplace approach
+    static void InplaceTranspose(int [][] arr , int r, int c){
+        for (int i = 0; i<c; i++){
+            for (int j = i; j<r; j++){    // NOTE HERE j should run from i other wise the array will be printed as it is
+                int temp = arr[i][j];
+                arr[i][j] = arr[j][i];
+                arr[j][i] = temp;
+            }
+        }
     }
 }
 public class TransposeOfArray {
@@ -39,7 +51,12 @@ public class TransposeOfArray {
         System.out.println("Entered array is: ");
         obj.printArray(a);
 
-        int [][] ans = obj.FindTranspose(a , r1, c1);
-        obj.printArray(ans);
+//        System.out.println("Transpose without inplace");
+//        int [][] ans = obj.FindTranspose(a , r1, c1);
+//        obj.printArray(ans);
+
+        System.out.println("Transpose using inplace approach: ");
+        obj.InplaceTranspose(a,r1,c1);
+        obj.printArray(a);
     }
 }
