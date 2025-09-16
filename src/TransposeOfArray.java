@@ -22,6 +22,7 @@ class lec21{
     }
 
     // inplace approach
+    // this method is only correct for metrix with same diagonal even after transpose
     static void InplaceTranspose(int [][] arr , int r, int c){
         for (int i = 0; i<c; i++){
             for (int j = i; j<r; j++){    // NOTE HERE j should run from i other wise the array will be printed as it is
