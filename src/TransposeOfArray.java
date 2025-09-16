@@ -1,4 +1,5 @@
 import java.util.Scanner;
+// Return the transpose of given matrix
 class lec21{
     static void printArray(int [][] arr){
         for (int i =0 ; i<arr.length; i++){
