@@ -14,6 +14,7 @@ class lec23{
         }
     }
 
+    //Brute Force Method
     static int RectangleSum(int [][] arr, int l1, int r1, int l2, int r2){
         int ans = 0;
         for (int i = l1; i<=l2; i++){
@@ -22,6 +23,27 @@ class lec23{
             }
         }
         return ans;
+    }
+
+    // 2nd better method insted traversing matrix everytime
+    static void PrefixMatrix(int [][] arr){
+        int r = arr.length;
+        if (r == 0) return;
+        int c = arr[0].length;          // note that this line will give an error if user gives r value as 0 means no row
+        // traverse row wise to calculate prefix of that row
+        for (int i = 0; i<r; i++){
+            for (int j = 1; j<c; j++){
+                arr[i][j] += arr[i][j-1];
+            }
+        }
+    }
+    static int RectangleSum2(int [][] arr, int l1, int r1, int l2, int r2){
+        int sum = 0;
+        PrefixMatrix(arr);
+        for (int i = l1; i<= l2; i++){
+            sum += arr[i][r2] - arr[i][r1-1];
+        }
+        return sum;
     }
 }
 
@@ -57,5 +79,7 @@ public class ReturnSumOfRectangleInTwoDMat {
         int ans = obj.RectangleSum(a,l1,r1,l2,r2);
         System.out.println(ans);
 
+        int ans1 = obj.RectangleSum2(a,l1,r1,l2,r2);
+        System.out.println(ans1);
     }
 }
