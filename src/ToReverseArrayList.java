@@ -63,7 +63,7 @@ public class ToReverseArrayList {
         Collections.sort(strlist);          // sorts string in lexicographical means preference for alphabets
         System.out.println(strlist);
 
-        // descending
+        // descending //
         Collections.sort(strlist, Collections.reverseOrder());
         System.out.println(strlist);
     }
