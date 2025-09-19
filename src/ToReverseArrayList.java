@@ -51,5 +51,20 @@ public class ToReverseArrayList {
         // Sort an array list in descending order with the help of collection.sort method
         Collections.sort(list, Collections.reverseOrder());     // here reverseorder is a comparator
         System.out.println(list);
+
+        // sorting an string array in ascending and descending order
+        ArrayList<String> strlist = new ArrayList<>();
+        strlist.add("hii");
+        strlist.add("hello");
+        strlist.add("how");
+        strlist.add("is");
+
+        // ascending
+        Collections.sort(strlist);          // sorts string in lexicographical means preference for alphabets
+        System.out.println(strlist);
+
+        // descending
+        Collections.sort(strlist, Collections.reverseOrder());
+        System.out.println(strlist);
     }
 }
