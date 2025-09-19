@@ -44,12 +44,12 @@ public class ToReverseArrayList {
         System.out.println(list);
 
 
-//        // Sort an array list in ascending order with the help of collection.sort method
-//        Collections.sort(list);
-//        System.out.println(list);
-//
-//        // Sort an array list in descending order with the help of collection.sort method
-//        Collections.sort(list, Collections.reverseOrder());     // here reverseorder is a comparator
-//        System.out.println(list);
+        // Sort an array list in ascending order with the help of collection.sort method
+        Collections.sort(list);
+        System.out.println(list);
+
+        // Sort an array list in descending order with the help of collection.sort method
+        Collections.sort(list, Collections.reverseOrder());     // here reverseorder is a comparator
+        System.out.println(list);
     }
 }
