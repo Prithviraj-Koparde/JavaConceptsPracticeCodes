@@ -38,12 +38,12 @@ public class ToReverseArrayList {
         obj.ArrListReverse(list);
         System.out.println("Reversed array is " + list);
 
-//        // method 2 is using collection class
-//        Collections.reverse(list);
-//        System.out.println("Using collection class ");
-//        System.out.println(list);
-//
-//
+        // method 2 is using collection class
+        Collections.reverse(list);
+        System.out.println("Using collection class ");
+        System.out.println(list);
+
+
 //        // Sort an array list in ascending order with the help of collection.sort method
 //        Collections.sort(list);
 //        System.out.println(list);
