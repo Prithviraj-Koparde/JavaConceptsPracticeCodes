@@ -10,6 +10,13 @@ class lec31 {
         }
         return y;
     }
+
+
+    // euclids algorithm is GCD(x,y) = GCD(y,x%y)
+    static int EuclidsGCD(int x, int y) {
+        if (y == 0) return x;
+        return EuclidsGCD(y, x % y);
+    }
 }
 
 public class GCD {
@@ -19,5 +26,6 @@ public class GCD {
         int x = sc.nextInt();
         int y = sc.nextInt();
         System.out.println(obj.lGCD(x, y));
+        System.out.println(obj.EuclidsGCD(x, y));
     }
 }
