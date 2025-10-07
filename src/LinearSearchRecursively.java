@@ -1,5 +1,7 @@
 // return true if target is present in array else return false
+// Now return the first index of that target if present else print -1
 class lec33 {
+    // 1
     static boolean LinearSearch(int[] arr, int target, int idx) {
         int n = arr.length;
         // Base case
@@ -8,6 +10,17 @@ class lec33 {
         if (arr[idx] == target) return true;
         // Recursive case
         return LinearSearch(arr, target, idx + 1);
+    }
+
+    // 2
+    static int LinearSearch1(int [] arr, int target , int idx){
+        int n = arr.length;
+        // Base case
+        if (idx==n) return -1;
+        // Self work
+        if (arr[idx]==target) return idx;
+        // Recursive case
+        return LinearSearch1(arr,target,idx+1);
     }
 }
 
@@ -21,6 +34,8 @@ public class LinearSearchRecursively {
         } else {
             System.out.println("No");
         }
+
+        System.out.println(obj.LinearSearch1(arr,9,0));
 
     }
 }
