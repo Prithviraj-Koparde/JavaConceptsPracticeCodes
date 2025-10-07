@@ -2,6 +2,7 @@
 // Now return the first index of that target if present else print -1
 // now return all indices of target if present else return
 // now return all indices of target in array list else return empty arraylist
+// now return last index of target value in array
 import java.util.ArrayList;
 class lec33 {
     // 1
@@ -56,6 +57,16 @@ class lec33 {
         ans.addAll(SmallAns);                           // add all idx from SmallAns in ans
         return ans;
     }
+
+    static int LastIndex(int [] arr, int target, int idx){
+        int n= arr.length;
+        // Base case
+        if (idx==0) return -1;
+        // Self work
+        if (arr[idx]==target) return idx;
+        // Recursive case
+        return LastIndex(arr,target,idx-1);
+    }
 }
 
 public class LinearSearchRecursively {
@@ -79,5 +90,8 @@ public class LinearSearchRecursively {
         for (int i = 0; i<ans.size(); i++){
             System.out.print(ans.get(i)+" ");
         }
+
+        System.out.println();
+        System.out.println("Last index of target value is: "+obj.LastIndex(arr,-3,arr.length-1));
     }
 }
