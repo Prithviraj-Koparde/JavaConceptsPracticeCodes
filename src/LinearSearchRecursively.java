@@ -1,6 +1,8 @@
 // return true if target is present in array else return false
 // Now return the first index of that target if present else print -1
 // now return all indices of target if present else return
+// now return all indices of target in array list else return empty arraylist
+import java.util.ArrayList;
 class lec33 {
     // 1
     static boolean LinearSearch(int[] arr, int target, int idx) {
@@ -38,6 +40,22 @@ class lec33 {
         // Recursive case
         FindAllIdx(arr,target,idx+1);
     }
+
+    // 4
+    static ArrayList<Integer> IndicesList(int [] arr, int target, int idx){
+        int n = arr.length;
+        ArrayList<Integer> ans = new ArrayList();       // return empty array list
+        // base case
+        if (idx==n) return ans;
+        // self work
+        if (arr[idx]==target){
+            ans.add(idx);                               // add idx to arraylist ans
+        }
+        // recursive case
+        ArrayList<Integer> SmallAns = IndicesList(arr, target, idx+1);
+        ans.addAll(SmallAns);                           // add all idx from SmallAns in ans
+        return ans;
+    }
 }
 
 public class LinearSearchRecursively {
@@ -54,5 +72,12 @@ public class LinearSearchRecursively {
         System.out.println(obj.LinearSearch1(arr,9,0));
         System.out.print("Indices of target: ");
         obj.FindAllIdx(arr,4,0);
+        System.out.println();
+
+
+        ArrayList<Integer> ans = obj.IndicesList(arr,4,0);
+        for (int i = 0; i<ans.size(); i++){
+            System.out.print(ans.get(i)+" ");
+        }
     }
 }
