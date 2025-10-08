@@ -11,6 +11,14 @@ class lec34a {
         // self work
         return SmallAns + s.charAt(idx);
     }
+
+    // method 2 of palindrome
+    static boolean Palindrome(String s, int l, int r) {
+        // Base case
+        if (l >= r) return true;
+        //self work && recursive case
+        return (s.charAt(l) == s.charAt(r) && Palindrome(s, l + 1, r - 1));
+    }
 }
 
 public class ReverseStringRecursively {
@@ -20,11 +28,14 @@ public class ReverseStringRecursively {
         lec34a obj = new lec34a();
         System.out.println(obj.Reverse(s, 0));
         // method 1 for checking palindrome
-        String rev = obj.Reverse(s,0);
-        if (rev.equals(s)){
+        String rev = obj.Reverse(s, 0);
+        if (rev.equals(s)) {
             System.out.println("Palindrome");
-        }else {
+        } else {
             System.out.println("Not Palindrome");
         }
+
+        System.out.println("method 2 of palindrome");
+        System.out.println(obj.Palindrome(s, 0, s.length() - 1));
     }
 }
