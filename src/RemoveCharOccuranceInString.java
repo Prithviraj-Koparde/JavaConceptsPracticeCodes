@@ -16,6 +16,21 @@ class lec34 {
             return SmallAns;
         }
     }
+
+    // method without using idx value
+    static String DeleteChar1(String s) {
+        // Base case
+        if (s.length() == 0) return "";
+        // recursive case
+        String SmallAns = DeleteChar1(s.substring(1));
+        char currentChar = s.charAt(0);
+        // self work
+        if (currentChar != 'a') {
+            return currentChar + SmallAns;
+        } else {
+            return SmallAns;
+        }
+    }
 }
 
 public class RemoveCharOccuranceInString {
@@ -24,5 +39,6 @@ public class RemoveCharOccuranceInString {
         lec34 obj = new lec34();
         String s = sc.nextLine();
         System.out.println(obj.DeleteChar(s, 0));
+        System.out.println(obj.DeleteChar1(s));
     }
 }
