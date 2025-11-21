@@ -1,10 +1,10 @@
 package LinkedList;
- 1. Print the length of LL
-insertAtEnd()
-insertAtStart()
-insertAt()
-Display()
-sizeOf()
+// 1. Print the length of LL
+//insertAtEnd()
+//insertAtStart()
+//insertAt()
+//Display()
+//sizeOf()
 
 import java.util.LinkedList;
 
