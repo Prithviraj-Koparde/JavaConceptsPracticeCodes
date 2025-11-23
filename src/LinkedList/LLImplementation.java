@@ -6,13 +6,17 @@ package LinkedList;
 //Display()
 //sizeOf()
 
+import javax.xml.transform.Source;
+import java.sql.SQLOutput;
 import java.util.LinkedList;
 
 class Node1 {
     int data;
     Node1 next;
 
-    Node1(int data) {this.data = data;}
+    Node1(int data) {
+        this.data = data;
+    }
 }
 
 class lec51a {
@@ -23,9 +27,9 @@ class lec51a {
         }
     }
 
-    public static int length(Node1 head){
+    public static int length(Node1 head) {
         int count = 0;
-        while (head != null){
+        while (head != null) {
             count++;
             head = head.next;
         }
@@ -33,38 +37,46 @@ class lec51a {
     }
 }
 
-class Linkedlist{
+class Linkedlist {
     Node1 head = null;
     Node1 tail = null;
 
-    void insertAtEnd(int val){
+    void insertAtEnd(int val) {
         Node1 temp = new Node1(val);
-        if (head == null){
+        if (head == null) {
             head = temp;
-        }
-        else {
+        } else {
             tail.next = temp;
         }
         tail = temp;
     }
 
-    void insertAtStart(int val){
+    void insertAtStart(int val) {
         Node1 temp = new Node1(val);
-        if (head == null){  // empty list
+        if (head == null) {  // empty list
             head = tail = temp;
 //            or
 //            insertAtEnd(val);
-        }
-        else {      // non empty list
+        } else {      // non empty list
             temp.next = head;
             head = temp;
         }
     }
 
-    void insertAt(int idx, int val){
+    void insertAt(int idx, int val) {
         Node1 t = new Node1(val);
         Node1 temp = head;
-        for(int i = 0; i<=idx-1; i++){
+        if (idx == sizeOf()) {
+            insertAtEnd(val);
+            return;
+        } else if (idx == 0) {
+            insertAtStart(val);
+            return;
+        } else if (idx < 0 || idx > sizeOf()) {
+            System.out.println("Wrong index...");
+            return;
+        }
+        for (int i = 0; i <= idx - 1; i++) {
             temp = temp.next;
         }
         t.next = temp.next;
@@ -72,18 +84,51 @@ class Linkedlist{
 
     }
 
-    void Display(){
+    int getElement(int idx) {
         Node1 temp = head;
-        while (temp != null){
+        if (idx < 0 || idx > sizeOf()) {
+            System.out.println("Wrong index...");
+            return idx;
+        }
+        for (int i = 1; i <= idx; i++) {
+            temp = temp.next;
+        }
+        return temp.data;
+    }
+
+    void deleteAt(int idx){
+        Node1 temp = head;
+        if (idx == 0){
+            head = head.next;
+            Display();
+            return;
+        }
+        else if (idx < 0 || idx > sizeOf()) {
+            System.out.println("Wrong index...");
+            return;
+        }
+
+        for (int i = 1; i<idx; i++){
+            temp = temp.next;
+        }
+
+        temp.next = temp.next.next;
+        tail = temp;
+        Display();
+    }
+
+    void Display() {
+        Node1 temp = head;
+        while (temp != null) {
             System.out.print(temp.data + " ");
             temp = temp.next;
         }
     }
 
-    int sizeOf(){
+    int sizeOf() {
         int count = 0;
         Node1 temp = head;
-        while (temp != null){
+        while (temp != null) {
             count++;
             temp = temp.next;
         }
@@ -113,10 +158,28 @@ public class LLImplementation {
         LL.Display();
 
         System.out.println();
-        LL.insertAt(3,-5);
+        LL.insertAt(3, -5);
+        LL.Display();
+
+        System.out.println();
+        LL.insertAt(-1, 13);
+        LL.Display();
+
+        System.out.println();
+        LL.insertAt(10, -10);
         LL.Display();
 
 
+        System.out.println();
+        System.out.println(LL.getElement(1));
+
+        System.out.println();
+        System.out.println(LL.getElement(14));
+
+        System.out.println();
+        LL.deleteAt(0);
+        System.out.println();
+        System.out.println(LL.tail.data);
 
     }
 }
