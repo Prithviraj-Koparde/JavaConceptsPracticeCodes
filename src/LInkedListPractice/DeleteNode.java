@@ -81,6 +81,15 @@ class LL {
         slow.next = slow.next.next;
     }
 
+    void sizeOf(){
+        node temp = head;
+        int size = 0;
+        while (temp != null){
+            size++;
+            temp = temp.next;
+        }
+    }
+
     // insertAtEnd
     void insertAtEnd(int val) {
         node temp = new node(val);
