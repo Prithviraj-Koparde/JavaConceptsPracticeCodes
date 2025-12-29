@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class StackInfix {
     public static void main(String[] args) {
-        String str = "9-5+3*4/6";
+        String str = "9-(5+3)*4/6";
         Stack<Integer> val = new Stack<>();
         Stack<Character> operator = new Stack<>();
 
@@ -12,8 +12,22 @@ public class StackInfix {
             char ch = str.charAt(i);
             int ascii = (int) ch;
             if (ascii >= 48 && ascii <= 57) val.push(ascii - 48);
-            else if (operator.size() == 0) operator.push(ch);
-            else {
+            else if (operator.size() == 0 || ch == '(' || operator.peek() == '(') operator.push(ch);
+
+            else if (ch == ')') {
+                while (operator.peek() != '(') {
+                    int val2 = val.pop();
+                    int val1 = val.pop();
+
+                    // working
+                    if (operator.peek() == '-') val.push(val1 - val2);
+                    if (operator.peek() == '+') val.push(val1 + val2);
+                    if (operator.peek() == '*') val.push(val1 * val2);
+                    if (operator.peek() == '/') val.push(val1 / val2);
+                    operator.pop();
+                }
+                operator.pop();
+            } else {
                 if (ch == '-' || ch == '+') {
                     int val2 = val.pop();
                     int val1 = val.pop();
